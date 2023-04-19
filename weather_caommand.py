@@ -12,9 +12,6 @@ async def weather_handler(message: types.Message):
         await message.reply("Введите /weather Название_города")
         return
     print(s_city)
-    if s_city == "":
-        await message.reply("Введите /weather Minsk или любой другой город")
-        return
     appid = "4dbc9b8bce7411705a58d5a4a39c3186"
     try:
         res = requests.get("http://api.openweathermap.org/data/2.5/find",
