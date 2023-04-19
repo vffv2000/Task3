@@ -8,12 +8,13 @@ from aiogram.utils import executor
 from start_commands import start_handler
 from other_commands import help_handler, echo_handler
 from weather_caommand import weather_handler
-from exchange_commands import list_exchange_handler
+from exchange_commands import list_exchange_handler,convert_convert_handler
 
 logging.basicConfig(level=logging.INFO)
 
 bot = Bot(token='5343231561:AAGB0nKpggD61U7t83sNgW_a0baKCQk2Deo')
 dp = Dispatcher(bot)
+dp.register_message_handler(convert_convert_handler, commands=['convert'])
 dp.register_message_handler(list_exchange_handler, commands=['list_ex'])
 dp.register_message_handler(weather_handler, commands=['weather'])
 dp.register_message_handler(start_handler, commands=['start'])
