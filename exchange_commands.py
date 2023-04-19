@@ -5,9 +5,10 @@ import json
 
 # Создаем пустой словарь payload и словарь headers с заголовком API-ключа
 payload = {}
-headers= {
+headers = {
   "apikey": "6YqPN8MyFR22HgPSafBTXA9TbhxgOG15"
 }
+
 
 # Обработчик команды /list_exchange
 async def list_exchange_handler(message: types.Message):
@@ -28,13 +29,14 @@ async def list_exchange_handler(message: types.Message):
     else:
         await message.reply(result)
 
+
 # Обработчик команды /convert
 async def convert_convert_handler(message: types.Message):
     # Извлекаем из сообщения параметры to, from и amount
     try:
         to = message.text.split()[1]
-        fro=message.text.split()[2]
-        amount=message.text.split()[3]
+        fro = message.text.split()[2]
+        amount = message.text.split()[3]
     except Exception as e:
         # Если параметры не указаны или указаны неверно, отправляем сообщение с инструкцией
         print("Exception (find):", e)
@@ -57,4 +59,5 @@ async def convert_convert_handler(message: types.Message):
     result = response.text
     # Отправляем сообщение с результатом конвертации
     await message.reply(
-        f"Из {json.loads(result)['query']['amount']} {json.loads(result)['query']['from']} мы получили {json.loads(result)['result']} {json.loads(result)['query']['to']}")
+        f"Из {json.loads(result)['query']['amount']} {json.loads(result)['query']['from']}"
+        f" мы получили {json.loads(result)['result']} {json.loads(result)['query']['to']}")
