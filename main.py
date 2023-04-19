@@ -6,11 +6,13 @@ from aiogram.utils import executor
 
 from start_commands import start_handler
 from other_commands import help_handler, echo_handler
+from weather_caommand import weather_handler
 
 logging.basicConfig(level=logging.INFO)
 
 bot = Bot(token='5343231561:AAGB0nKpggD61U7t83sNgW_a0baKCQk2Deo')
 dp = Dispatcher(bot)
+dp.register_message_handler(weather_handler, commands=['weather'])
 dp.register_message_handler(start_handler, commands=['start'])
 dp.register_message_handler(help_handler, commands=['help'])
 dp.register_message_handler(echo_handler)
