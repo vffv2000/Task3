@@ -1,8 +1,6 @@
+#https://apilayer.com/marketplace/currency_data-api
 import requests
 from aiogram import types
-import aiohttp
-from aiogram import Bot, Dispatcher, types
-from aiogram.types import ParseMode
 import json
 
 payload = {}
