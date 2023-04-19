@@ -8,7 +8,7 @@ from aiogram.utils import executor
 from start_commands import start_handler
 from other_commands import help_handler, echo_handler
 from weather_caommand import weather_handler
-from exchange_commands import list_exchange_handler,convert_convert_handler
+from exchange_commands import list_exchange_handler, convert_convert_handler
 
 logging.basicConfig(level=logging.INFO)
 
@@ -25,8 +25,10 @@ dp.register_message_handler(echo_handler)
 async def on_startup(dp):
     await bot.send_message(chat_id='556907227', text='Бот запущен')
 
+
 async def on_shutdown(dp):
     await bot.send_message(chat_id='556907227', text='Бот остановлен')
+
 
 async def main():
     # Регистрация обработчиков команд
