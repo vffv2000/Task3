@@ -31,6 +31,7 @@ async def on_startup(dp):
     await bot.send_message(chat_id='556907227', text='Бот запущен')
 
 
+
 async def on_shutdown(dp):
     await bot.send_message(chat_id='556907227', text='Бот остановлен')
 
