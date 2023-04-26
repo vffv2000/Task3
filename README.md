@@ -1,7 +1,7 @@
 
 # Telegram Bot
 
-This is a Telegram bot written in Python using the aiogram library. The bot provides the following features:
+This is Telegram bot written in Python using the aiogram library. The bot provides the following features:
 
 1.  Greet the user and offer them to choose a certain function of the bot.
 2.  Determine the current weather in a specific city using a public weather API (e.g. OpenWeatherMap) and provide the user with relevant information.
